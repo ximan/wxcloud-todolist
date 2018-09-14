@@ -1,0 +1,9 @@
+page {
+  background-color: #f8f8f8;
+}
+.weui-cell__hd{
+  margin-right: 20rpx;
+}
+.item-del .weui-cell__bd{
+  text-decoration: line-through;
+}

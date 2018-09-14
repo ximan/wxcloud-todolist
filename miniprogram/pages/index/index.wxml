@@ -1,0 +1,24 @@
+<view class="weui-cells__title">Todolist</view>
+<view class="weui-cells">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput="bindKeyInput" placeholder="请输入任务名" value="{{inputValue}}" />
+    </view>
+  </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="todoAdd">增加</button>
+</view>
+<view class="weui-cells">
+  <view class="weui-cell {{item.complete ? 'item-del' : ''}}" wx:for='{{listData}}' wx:key="index">
+    <view class="weui-cell__hd">{{index + 1}}</view>
+    <view class="weui-cell__bd">{{item.name}}</view>
+    <view class="weui-cell__ft">
+      <button class="weui-btn mini-btn" type='primary' size='mini' data-id='{{item._id}}' data-complete='{{item.complete}}' bindtap="btnChange">
+        <block wx:if='{{item.complete}}'>取消</block>
+        <block wx:else>完成</block>
+      </button>
+      <button class="weui-btn mini-btn" type="warn" size="mini" data-id='{{item._id}}' bindtap="btnDel">删除</button>
+    </view>
+  </view>
+</view>
